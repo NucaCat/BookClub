@@ -65,43 +65,6 @@ namespace BookClub.Controllers
             }
             return Ok(books);
         }
-        /*[HttpGet]
-        [Route("readers")]
-        public async Task<ActionResult<IEnumerable<ClubReader>>> GetReaders()
-        {
-            var readers = await _repo.GetClubReadersAsync();
-            if (readers == null || readers.Count() == 0)
-            {
-                return NotFound();
-            }
-            return Ok(readers);
-        }*/
-        /*
-        [HttpGet]
-        [Route("readers/{id}")]
-        public async Task<ActionResult<ClubReader>> GetReaderById(int id)
-        {
-            var reader = await _repo.GetClubReaderByIdAsync(id);
-            if (reader == null)
-            {
-                return NotFound();
-            }
-            return Ok(reader);
-        }*/
-        /*
-        [HttpGet]
-        [Route("readersWithBooks")]
-        public async Task<ActionResult<IEnumerable<ClubReaderWithBooksReadDTO>>> GetReadersWithBooks()
-        {
-            var readers = await _repo.GetClubReadersWithBooksAsync();
-            if (readers == null || readers.Count() == 0)
-            {
-                return NotFound();
-            }
-            var model = _mapper.Map<IEnumerable<ClubReaderWithBooksReadDTO>>(readers);
-            return Ok(model);
-        }
-        */
         [HttpGet]
         [Route("readersWithBooks/{id}")]
         public async Task<ActionResult<ClubReaderWithBooksReadDTO>> GetReaderWithBooksById(int id)

@@ -32,11 +32,6 @@ namespace BookClubLibrary.Data
                         .FirstOrDefaultAsync(x => x.Login == reader.Login);
         }
 
-        /*public async Task<Book> GetBookByIdAsync(int id)
-        {
-            return await _context.Books.FindAsync(id);
-        }*/
-
         public async Task<IEnumerable<Book>> GetBooksAsync()
         {
             return await _context.Books.ToListAsync();
@@ -49,24 +44,6 @@ namespace BookClubLibrary.Data
                     .ThenInclude(x => x.Book)
                     .FirstOrDefaultAsync(x => x.Id == id);
         }
-        /*
-        public async Task<IEnumerable<ClubReader>> GetClubReadersWithBooksAsync()
-        {
-            return await _context.ClubReaders
-                    .Include(x => x.ClubReaderBooks)
-                    .ThenInclude(x => x.Book)
-                    .ToListAsync();
-        }*/
-        /*
-        public async Task<ClubReader> GetClubReaderByIdAsync(int id)
-        {
-            return await _context.ClubReaders.FindAsync(id);
-        }*/
-        /*
-        public async Task<IEnumerable<ClubReader>> GetClubReadersAsync()
-        {
-            return await _context.ClubReaders.ToListAsync();
-        }*/
 
         public async Task<bool> SaveChangesAsync()
         {
